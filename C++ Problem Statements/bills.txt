@@ -1,0 +1,12 @@
+Bill ID: 1
+Customer Name: John Doe
+Purchased Items:
+ - Laptop
+ - Smartphone
+Total Amount: 1499.98
+Bill ID: 1
+Customer Name: John Doe
+Purchased Items:
+ - Laptop
+ - Smartphone
+Total Amount: 1499.98
