@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Multiplication form</h1>
+
+    <label>Enter the Number 1 :- </label><input type="number" id="num1"/><br/><br/>
+    <label>Enter the Number 2 :- </label><input type="number" id="num2"/><br/><br/>
+    <button onclick="createPromise()">Submit</button><br/><br/>
+
+    <label id="print"></label>
+
+    <script>
+    function createPromise()
+        {
+            let promiseCreated=new Promise(function (resolve,reject)
+            {
+                let num1=document.getElementById("num1").value;
+                let num2=document.getElementById("num2").value;
+
+                if(num1 >0 && num2 > 0)
+                {
+                    let mul=num1*num2;
+                    document.getElementById("print").innerHTML=mul;
+                    resolve();
+                }
+                else{
+                      document.getElementById("print").innerHTML="Error:Positive numbers only"
+                }
+            })
+            promiseCreated.then(
+                function(value){console.log("Currect Values are inserted")},
+                function(err){console.log("error values")}
+            )
+        }
+    </script>
+</body>
+</html>

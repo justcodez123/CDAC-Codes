@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Corner Animation</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0; /* Remove default body margin */
+            overflow-x: hidden; /* Prevent scrollbars during animation */
+        }
+
+        /* Common styles for both boxes */
+        .box {
+            position: absolute;
+            width: 200px;
+            height: 100px;
+            background-color: #007bff;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+        }
+
+        /* Positioning for each box */
+        #leftDiv {
+            top: 20px;
+            left: 20px;
+            /* Start off-screen to the left */
+            transform: translateX(-150%);
+        }
+
+        #rightDiv {
+            top: 20px;
+            right: 20px;
+            /* Start off-screen to the right */
+            transform: translateX(150%);
+        }
+
+        /* The class that will be added by JavaScript to trigger the animation */
+        .animate {
+            transition: transform 1s ease-out;
+            transform: translateX(0); /* Move to the final position */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="leftDiv" class="box">
+        Left Box
+    </div>
+
+    <div id="rightDiv" class="box">
+        Right Box
+    </div>
+
+    <script>
+        // Wait until the whole page is loaded before running the script
+        window.onload = function() {
+            // This is the callback function that adds the animation class
+            function startAnimation() {
+                const leftBox = document.getElementById("leftDiv");
+                const rightBox = document.getElementById("rightDiv");
+
+                console.log("Callback executed: Starting animation...");
+
+                leftBox.classList.add("animate");
+                rightBox.classList.add("animate");
+            }
+            
+            // Use setTimeout to call our function after a 1-second (1000ms) delay
+            setTimeout(startAnimation, 1000);
+        };
+    </script>
+
+</body>
+</html>

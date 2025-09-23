@@ -1,0 +1,72 @@
+<!-- 2) Display Timer on Browser using callback function setInterval
+
+3) Take 1 Button and when user click on that button display 
+   How many times user click and display that count in <p> tag 
+
+	if user click 10 times then make that button readonly using style  -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, button {
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: aquamarine;
+            cursor: pointer;
+            border-color: azure;
+            animation-fill-mode: forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Time</h1>
+    <h2 id="d0"></h2>
+    <button onclick="myFunction()">clickMe</button>
+
+    <h1>Part 2</h1>
+    <h2 id="d1"></h2>
+    <button onclick="myfn2()" id="d2">
+        Counter
+    </button>
+
+<script>
+    /*setInterval is to make it a cotinuous clock */
+    setInterval(myFunction(),1000);
+
+    function myFunction() {
+        let d = new Date();
+        document.getElementById("d0").innerHTML=
+        d.getHours() + ":" +
+        d.getMinutes() + ":" +
+        d.getSeconds();
+    }
+
+    let count = 0;
+    function myfn2() {
+        
+        let d1 = document.getElementById("d1");console.log(d1);
+        if(count >= 10){
+           d2.disabled = true;
+        }
+        else{
+            count++;
+            d1.innerHTML = `count = ${count}`;
+        }  
+    }
+
+//myFunction();
+</script>
+
+</body>
+</html>

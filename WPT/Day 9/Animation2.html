@@ -1,0 +1,63 @@
+<!-- 
+1) use browser callback functions
+     setInterval
+	 clearInterval
+	 setTimeout -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment Day 7</title>
+</head>
+
+<body>
+    <h1 style="background-color: rgb(240, 136, 18); text-align: center ; border-radius: 20px;"> <i><B>CALLBACK FUNCTION</B></i></h1>
+     <button style="background-color: beige; align-self: auto; border-radius: 20px; font-family: 'Times New Roman';" id="b1" onclick="button()"><i>Animate</i></button> <br></br>   
+   <div style="background-color: rgba(255, 107, 2, 0.911); width: 30px; height: 30px; border-radius:20%; position: absolute; right: 0;" id="G1">   
+        </div>       
+         <div style="background-color: teal; width: 30px; height: 30px; border-radius: 20%; position: absolute; left: 0;" id="R1">
+
+        </div>
+
+        <div style="background-color: rgba(255, 107, 2, 0.911); width: 30px; height: 30px; border-radius: 20%; position: absolute; right: 0; margin-top: 150px;" id="p1">
+
+        </div>
+
+        <div style="background-color: teal; width: 30px; height: 30px; border-radius: 20%; position: absolute; left: 0; margin-top: 150px;" id="q1">
+
+        </div>
+ 
+
+
+<script>
+
+
+        function button()
+{let num = 0;
+      let count=0;
+      let a12=setInterval(fun,1000)
+       function fun()
+       {
+            num=num+10;
+           
+          document.getElementById("R1").style.marginTop=num+"px";
+          document.getElementById("R1").style.marginLeft=num+"px";
+          document.getElementById("G1").style.marginTop=num+"px";
+          document.getElementById("G1").style.marginRight=num+"px";
+
+          document.getElementById("p1").style.marginBottom=num+"px";
+          document.getElementById("p1").style.marginRight=num+"px";
+          document.getElementById("q1").style.marginBottom=num+"px";
+          document.getElementById("q1").style.marginLeft=num+"px";
+
+             
+       }
+
+   setTimeout(()=>{clearInterval(a12)},8000);
+    }
+</script>
+</body>
+</html>

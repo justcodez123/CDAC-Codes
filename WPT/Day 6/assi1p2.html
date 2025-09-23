@@ -1,0 +1,311 @@
+<!-- Write 6 Function in Script 
+	
+	display 
+	addition 
+	subtraction
+	multiply
+	division 
+	calculate
+	
+	Accept data from user 
+		2 numbers and Which Operation they want to perform
+  according to choice call particular function and display result 
+using callback function concept 
+
+    calculate(n1 , n2 , mcallBack)
+		addition (n1 , n2 , display);
+
+<!DOCTYPE html>
+<html>
+    <head>  <style>
+         
+    </style>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <label >Enter first number </label> <br>
+        <input type ="text" style="background-color: coral; border-radius: 5px ;"> 
+        <label> <br>
+        Enter second number 
+        </label>  <br>
+        <input type ="text" style="background-color: coral; border-radius: 5px;">  <br>
+        
+       <br> <button onclick="addition()" style="background-color: aquamarine; border-color: azure; border-radius: 5px;" > 
+            Submit 
+          </button>
+       
+       
+        <script>
+        
+            function  display()
+            {
+
+            let d =document.getElementsByTagName("input")[0];  
+              console.log(d)
+            } 
+
+  console.log(display())
+
+        function addition()
+        {   sum =0;
+            let d1 =document.getElementsByTagName("input")[0];
+            let d2 =document.getElementsByTagName("input")[1];
+            sum = parseInt(d1.value) + parseInt(d2.value);
+ 
+            console.log(sum);
+            
+        }
+
+        </script>
+    </body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input, select, button {
+            padding: 8px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: aquamarine;
+            cursor: pointer;
+            border-color: azure;
+        }
+    </style>
+</head>
+<body>
+    <label>Enter first number</label><br>
+    <input id="num1" type="text" style="background-color: coral;"><br>
+
+    <label>Enter second number</label><br>
+    <input id="num2" type="text" style="background-color: coral;"><br>
+
+    <label>Select operation</label><br>
+    <select id="operation">
+        <option value="add">Addition (+)</option>
+        <option value="sub">Subtraction (-)</option>
+        <option value="mul">Multiply (×)</option>
+        <option value="div">Division (÷)</option>
+    </select><br>
+
+    <button onclick="handleCalculate()">Submit</button>
+
+    <h3>Result: <span id="result"></span></h3>
+
+    <script>
+        // Display function to show the result
+        function display(result) {
+            document.getElementById('result').textContent = result;
+        }
+
+        // Addition
+        function addition(n1, n2, callback) {
+            let res = n1 + n2;
+            callback(res);
+        }
+
+        // Subtraction
+        function subtraction(n1, n2, callback) {
+            let res = n1 - n2;
+            callback(res);
+        }
+
+        // Multiply
+        function multiply(n1, n2, callback) {
+            let res = n1 * n2;
+            callback(res);
+        }
+
+        // Division
+        function division(n1, n2, callback) {
+            if (n2 === 0) {
+                callback("Error: Division by zero");
+            } else {
+                let res = n1 / n2;
+                callback(res);
+            }
+        }
+
+        // // Calculate function which calls the right operation based on user choice
+        // function calculate(n1, n2, operation, callback) {
+        //     switch(operation) {
+        //         case 'add':
+        //             addition(n1, n2, callback);
+                    
+        //         case 'sub':
+        //             subtraction(n1, n2, callback);
+                    
+        //         case 'mul':
+        //             multiply(n1, n2, callback);
+                 
+        //         case 'div':
+        //             division(n1, n2, callback);
+                  
+        //         // default:
+        //         //     callback("Invalid operation");
+        //     }
+        // }
+
+        // Handler when user clicks the Submit button
+        function handleCalculate() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operation = document.getElementById('operation').value;
+
+            // Validate inputs
+            if (isNaN(num1) || isNaN(num2)) {
+                display("Please enter valid numbers");
+                return;
+            }
+
+            calculate(num1, num2, operation, display);
+        }
+    </script>
+</body>
+</html>

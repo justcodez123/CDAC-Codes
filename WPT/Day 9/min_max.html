@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 2px solid black; 
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+        
+        <div id="d1">
+            <label for="username">Enter Username :</label>
+            <input type="text" id="username"/>
+            <p id="p1"></p>
+        </div>
+
+         <div id="d1">
+            <label for="password">Enter Password :</label>
+            <input type="password" id="password" />
+            <p id="p2"></p>
+        </div>
+
+         <div id="d1">
+            <label for="email">Enter Email :</label>
+            <input type="email" id="email" />
+            <p id="p3"></p>
+        </div>
+
+        <button type="submit" onclick="Submit1()" value="click">Submit</button>
+        <button type="reset">Reset</button>
+
+    <script>
+        function Submit1(){
+        let d=document.getElementById("username").value;
+
+        if(d.trim()==""){
+            document.getElementById("p1").innerHTML="please enter valid user name"
+        }
+        else if(d.length < 3)
+        {
+             document.getElementById("p1").innerHTML="length greater than 3"
+        }
+        else if(d.length >12){
+            document.getElementById("p1").innerHTML="length should be less than 12"
+        }
+        else{
+
+        }
+
+
+        let x=document.getElementById("password").value
+        if(x.trim()==""){
+            document.getElementById("p2").innerHTML="please enter valid password"
+        }else if(x.length < 3)
+        {
+             document.getElementById("p2").innerHTML="length greater than 3"
+        }
+        else if(x.length >12){
+            document.getElementById("p2").innerHTML="length should be less than 12"
+        }
+        else{
+            
+        }
+
+        let y=document.getElementById("email").value
+        if(y.trim()==""){
+            document.getElementById("p3").innerHTML="please enter valid email"
+        }else if(y.length < 3)
+        {
+             document.getElementById("p3").innerHTML="length greater than 3"
+        }
+        else if(y.length >30){
+            document.getElementById("p3").innerHTML="length should be less than 12"
+        }
+        else{
+            
+        }
+        
+        }
+    </script>
+    </body>
+</html>
+
+
+
+
+     

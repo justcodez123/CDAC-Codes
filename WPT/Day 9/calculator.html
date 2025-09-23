@@ -1,0 +1,136 @@
+<!-- Take TextField and Multiple Buttons 
+	Create Calculator using all concepts 
+	from HTML , css , JavaScript , JQuery  -->
+
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Calculator</title>
+	</head>
+	<body>
+
+		<input type="text" id="screen" placeholder="Number"/><br/>
+
+		<button onclick="seven()" class="number">7</button>
+		<button onclick="eight()" class="number">8</button>
+		<button onclick="nine()" class="number">9</button>
+		<button onclick="mul()" class="number">*</button><br/>
+		<button onclick="four()" class="number">4</button>
+		<button onclick="five()" class="number">5</button>
+		<button onclick="six()" class="number">6</button>
+		<button onclick="minus()" class="number">-</button><br/>
+		<button onclick="one()" class="number">1</button>
+		<button onclick="two()" class="number">2</button>
+		<button onclick="three()" class="number">3</button>
+		<button onclick="plus()" class="number">+</button><br/>
+		<button onclick="divide()" class="number">/</button>
+		<button onclick="zero()" class="number">0</button>
+		<button onclick="dot()" class="number">.</button>
+		<button onclick="equal()" class="number">=</button>
+		<button onclick="clear1()" class="number">clear</button>
+		
+	</body>
+	<script>
+				function seven()
+				{
+					document.getElementById("screen").value += "7";
+				}
+
+				function eight()
+				{
+					document.getElementById("screen").value += "8";
+				}
+
+				function nine()
+				{
+					document.getElementById("screen").value += "9";
+				}
+
+				function four()
+				{
+					document.getElementById("screen").value += "4";
+				}
+
+				function five()
+				{
+					document.getElementById("screen").value += "5";
+				}
+
+				function six()
+				{
+					document.getElementById("screen").value += "6";
+				}
+
+				function one()
+				{
+					document.getElementById("screen").value += "1";
+				}
+
+				function two()
+				{
+					document.getElementById("screen").value += "2";
+				}
+
+				function three()
+				{
+					document.getElementById("screen").value += "3";
+				}
+
+				function zero()
+				{
+					document.getElementById("screen").value += "0";
+				}
+
+				
+
+				function dot()
+				{
+					document.getElementById("screen").value += ".";
+				}
+
+				function plus()
+				{
+					document.getElementById("screen").value += "+";
+				}
+
+				function minus()
+				{
+					document.getElementById("screen").value += "-";
+				}
+
+				function mul()
+				{
+					document.getElementById("screen").value += "*";
+				}
+
+				function divide()
+				{
+					document.getElementById("screen").value += "/";
+				}
+
+				function equal()
+				{
+					let numbers=document.getElementById("screen").value;
+					//console.log(numbers)
+					//let num=Number(numbers);
+					//console.log(num);
+					let a=eval(numbers)
+					console.log(a);
+					document.getElementById("screen").value=a;
+				}
+				function clear1()
+				{
+					document.getElementById("screen").value = " ";
+				}
+	</script>
+
+	<style>
+		.number{
+			width: 40px;
+			margin-top: 10px;
+			align-items: center;
+		}
+	</style>
+	</html>

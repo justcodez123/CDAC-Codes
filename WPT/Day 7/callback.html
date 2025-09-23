@@ -1,0 +1,36 @@
+<!-- use browser callback functions
+     setInterval
+	 clearInterval
+	 setTimeout -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Callback</title>
+        
+    </head>
+    <body onload="load()">
+        <h1 style="text-align: center;" id="h1">Hello from JavaScript</h1>
+        <h2 style="text-align: center;"></h2>
+
+        <script >
+            let id = setInterval(load, 5000);
+            function load(){
+                let date = new Date();
+                // body = document.getElementsByTagName("body")[0];
+
+                count = 0;
+                setTimeout(() => {  
+                    h1 = document.getElementById("h1");
+                    alert("This message appeared after 5 s");
+                    h1.innerHTML = "Bye From JavaScript";
+                    count++;
+                }, 5000);
+                /*Not loading the body until 10 seconds*/
+                if(count < 6){
+                    clearInterval(id);
+                }
+            }
+        </script>
+    </body>
+</html>

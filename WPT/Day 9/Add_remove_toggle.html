@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Class Methods</title>
+    <style>
+        .highlight{background-color: aqua;
+            font-weight: bold;
+
+        }
+        .border1{
+            border: 2px solid black;
+            padding: 10px;
+
+        }
+        .largetext{
+            font-family: cursive;
+            font-size: 24px;
+
+        }
+        
+    </style>
+</head>
+<body>
+  <h1>Welcome to iet</h1>
+  <p id="p1">Vision : To become and remain a preferred destination for aspiring students to acquire adequate technical and behavioral employability skills primarily in the IT & ITes Industry.</p>
+  <button id="add">Add class</button>
+  <button id="remove">Remove class</button>
+  <button id="toggle">Toogle class</button>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script>
+    $(document).ready(function(){
+        $("#add").click(function(){
+            $("#p1").addClass("highlight")
+        })
+        $("#remove").click(function(){
+            $("#p1").removeClass("highlight")
+        })
+        $("#toggle").click(function(){
+            $("#p1").toggleClass("border1 largetext")
+        })
+    })
+   </script>
+
+</body>
+</html>

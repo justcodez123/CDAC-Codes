@@ -1,0 +1,55 @@
+<!-- 1) Demonstrate Ajax with JQuery Syntax 
+	$("").load()
+	$.get()
+
+2) Do Yesterday Data Load code with Promise Concept 
+
+3) use stylesheets mentioned in BootStrap 
+   and create Responsive WebPage 
+
+https://www.w3schools.com/bootstrap5/index.php -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax_implementation</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>">
+    <script>
+        $("doument").ready(
+            function(){
+                $("button").click(
+                   () => {
+                    //   $.get("content.txt", (data, status)=>{
+                    //     alert("success "+ status);
+                    //     console.log(data);
+                    //     //$("#result").html(data);
+                    //   });
+
+                     $("#result").load(
+                        "post.html", function(response, status, xhr) {
+                        if (status) {
+                            alert("Error loading file: " + xhr.status + " " + xhr.statusText);
+                          }
+                        }
+                      )
+
+                   }
+                )
+            }
+        );
+    </script>
+</head>
+<body>
+    <h1>Data from async</h1>
+    <div id="result" style="border: 1px solid black; padding: 10px; margin-top: 10px;">
+        <p>This content will be replaced.</p>
+    </div>
+    <button>
+        Click
+    </button>
+    
+</body>
+</html>

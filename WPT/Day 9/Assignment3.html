@@ -1,0 +1,56 @@
+<!-- 3) in 2nd Assignment -  display data depends on parameter
+   Accept id from user -->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment 2</title>
+    </head>
+    <body>
+        <h1>Assignment 2</h1>
+        <input type="text" placeholder="Enter the number" id="i1"/><br/><br/>
+        <button onclick="submit1()">Submit</button>
+        <table  style="border: 2px solid black;" id="userTable"></table>
+
+    </body>
+
+    <script>
+        function submit1()
+        {
+            let a=document.getElementById("i1").value;
+            
+            let request = new XMLHttpRequest();
+
+            request.open("GET",`https://jsonplaceholder.typicode.com/posts/${a}`,true);
+            request.send();
+
+            request.onload=function ()
+            {
+                let data=JSON.parse(this.responseText);  
+                // console.log(data[num]);
+            
+             let tableHTML = `
+                 <table border="1" cellpadding="5" cellspacing="0">
+                  <tr>
+                   <th>Id</th>
+                    <th>Title</th>
+                
+                  </tr>
+                 `;  
+                
+                      tableHTML += `
+                    <tr>
+                    <td>${data.id}</td>
+                    <td>${data.title}</td>
+                    </tr>`;
+    
+                  
+
+             tableHTML += `</table>`;
+             document.getElementById("userTable").innerHTML = tableHTML; 
+        }
+    }
+    </script>
+    </html>

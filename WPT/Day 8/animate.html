@@ -1,0 +1,51 @@
+<!-- Using Jquery animate() API , write a div that has a nice quote in a nice font
+, color and size . Run 
+the scroller from left to right 4 times , then R to L
+On click of the button -->
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Scroller</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(
+                 function () {
+                    let repeatCount = 0;
+                    const totalRepeats = 4;
+
+                    function scrollLeftToRight() {
+                        if (repeatCount < totalRepeats) {
+                            $('#div1').animate({ 'left': '100%' }, 2000, function() {
+                            $('#div1').css('left', '-100%');
+                            repeatCount++;
+                            scrollLeftToRight();
+                        });
+                        } else {
+                            scrollRightToLeft();
+                        }
+                    }
+
+
+                    function scrollRightToLeft() {
+                        $('#div1').animate({ 'left': '-100%' }, 2000);
+                    }
+
+                    console.log($('#startAnimation').click(function() {
+                        repeatCount = 0; 
+                        $('#div1').css('left', '-100%'); 
+                        scrollLeftToRight()
+                        console.log(scrollLeftToRight());
+                    }));
+
+                }
+              )
+        </script>
+    </head>
+    <body>
+        <div id = "div1" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        ; font-style: italic; font-size: large; text-align: center; background-color: beige; ">
+            Quote of the day : Not all those who wander are lost.
+        </div>
+        <button type="button" id="startAnimation" style="align-items: center;">Scroll</button>
+    </body>
+</html>

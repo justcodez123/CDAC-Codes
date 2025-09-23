@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form</title>
+        <style>
+            #cont1 {
+                margin : 250px;
+                text-align: center;
+            }
+            .lb {
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="cont1">
+            <label >First Name:</label>
+            <input type = "input" class="lb" >
+            <br/><label>Last Name:</label>
+            <input type = "input" class="lb">
+            <br/><label >Email:</label>
+            <input type = "input" class="lb">
+            <br/><label >Date of Birth:</label>
+            <input type = "date" class="lb">
+
+            <br/><button class="bt">Cancel</button>
+            <button class="bt" onclick="handlefn()">Submit</button>
+        </div>
+        <div>
+            
+        </div>
+
+        <script>
+            lb0 = document.getElementsByClassName("lb")[0];
+            lb1 = document.getElementsByClassName("lb")[1];
+            lb2 = document.getElementsByClassName("lb")[2];
+            lb3 = document.getElementsByClassName("lb")[3];
+
+            function handlefn() {
+                    if(!lb0.value)
+                        alert("Enter the first name");
+                    if(!lb1.value)
+                        alert("Enter the Second name");
+                    if(!lb2.value)
+                        alert("Enter your email ");
+                    if(!lb3.value)
+                        alert("Enter the date of birth"); 
+                }
+        </script>
+    </body>
+</html>

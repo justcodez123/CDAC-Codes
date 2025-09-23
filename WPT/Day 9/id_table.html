@@ -1,0 +1,61 @@
+<!-- 2) in Ajax Concept get Data From url
+     https://jsonplaceholder.typicode.com/posts
+
+	From Data display 
+	id and Title in Table Format on html page  -->
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Assignment 2</title>
+    </head>
+    <body>
+        <h1>Assignment 2</h1>
+        <table style="border: 2px solid black;" id="userTable"></table>
+
+    </body>
+
+    <script>
+        let request = new XMLHttpRequest();
+
+
+        request.open("GET","https://jsonplaceholder.typicode.com/posts",true);
+        request.send();
+
+        request.onload=function ()
+        {
+            //console.log(this.response);
+
+            let data=JSON.parse(this.response);
+           // console.log(this.response.Id);
+           // console.log(data.Id);
+            //console.log(data);
+
+           
+                    let tableHTML = `
+        <table border="1" cellpadding="5" cellspacing="0">
+            <tr>
+                <th>User Id</th>
+                <th>ID</th>
+                
+            </tr>
+    `;
+        for(let i=0;i<data.length;i++)
+            {
+                tableHTML += `
+            <tr>
+                <td>${data[i].userId}</td>
+                <td>${data[i].title}</td>
+                
+            </tr>`;
+            
+            }
+
+             tableHTML += `</table>`;
+             document.getElementById("userTable").innerHTML = tableHTML; 
+        }
+    </script>
+    </html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tables</title>
+        <style></style>
+    </head>
+    <body>
+        <input type="input" class="f1">
+        <button onclick="handle()">submit</button>
+        <div class="f1">
+            
+        </div>
+        <script>
+            function handle() {
+                // console.log("abc");
+                v = document.getElementsByClassName("f1")[0].value;
+                // console.log(v);
+                // arr = [];
+                // for(i=1; i<=10; i++){
+                //     arr.push(v*i);
+                // }
+                let op = "<table border=1>";
+                for(i=1; i<=10; i++){
+                    str = `<tr><td> ${i} * ${v} = ${i*v} </td></tr>`;
+                    op = (op + str);
+                    console.log(op);
+                }
+                op = op + "</table>";
+                out = document.getElementsByClassName("f1")[1];
+                console.log(out);
+                out.innerHTML = op
+            }
+        </script>
+    </body>
+</html>

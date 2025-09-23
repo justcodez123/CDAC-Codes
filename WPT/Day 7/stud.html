@@ -1,0 +1,100 @@
+<!-- accept data from user using input fields 
+      firstName LastName age 
+	  
+	  store data in Object format in function 
+	  and convert into JSON format 
+	  
+	  and display data in table format from JSON format data 
+	  
+4)	using same elements from assignment 3 
+    create username of User dynamically 
+      take 1st 2 characters from firstName
+	  take last 2 characters from lastName
+	  and age 
+	  
+	  eg Amit Patil 30 === amil30  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Data</title>
+</head>
+<body>
+    <div class="user">
+        <label for="firstName">FirstName</label><br>
+        <input type="text" id="firstName"><br>
+
+        <label for="lastName">LastName</label><br>
+        <input type="text" id="lastName"><br>
+
+        <label for="age">Age</label><br>
+        <input type="text" id="age"><br>
+
+        <button onclick="processUserData()">Submit</button>
+    </div>
+
+    <h3>Generated Username: <span id="usernameResult"></span></h3>
+
+    <table id="userTable">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="userTableBody">
+            </tbody>
+    </table>
+
+    <script>
+        function processUserData() {
+           
+            const firstName = document.getElementById("firstName").value;
+            const lastName = document.getElementById("lastName").value;
+            const age = document.getElementById("age").value;
+    
+            const user = {
+                firstName: firstName,
+                lastName: lastName,
+                age: parseInt(age)
+            };
+            console.log("JavaScript Object:", user);
+
+           
+            const userJSON = JSON.stringify(user);
+            console.log("JSON String:", userJSON);
+
+            const dataToDisplay = JSON.parse(userJSON);
+
+        
+            const firstPart = dataToDisplay.firstName.slice(0, 2);
+            const lastPart = dataToDisplay.lastName.slice(-2);
+            const dynamicUsername = firstPart.toLowerCase() + lastPart.toLowerCase() + dataToDisplay.age;
+            
+           
+            document.getElementById("usernameResult").textContent = dynamicUsername;
+
+          
+            const tableBody = document.getElementById("userTableBody");
+            
+          
+            const newRow = document.createElement("tr");
+        
+            newRow.innerHTML = `
+                <td>${dataToDisplay.firstName}</td>
+                <td>${dataToDisplay.lastName}</td>
+                <td>${dataToDisplay.age}</td>
+            `;
+            
+            tableBody.appendChild(newRow);
+            
+   
+            document.getElementById("firstName").value = "";
+            document.getElementById("lastName").value = "";
+            document.getElementById("age").value = "";
+        }
+    
+    </script>
+</body>
+</html>

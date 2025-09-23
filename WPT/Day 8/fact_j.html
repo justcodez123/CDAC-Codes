@@ -1,0 +1,36 @@
+<!-- Using Jquery accept a number from the user in a textfield -on change show 
+ the factorial of that number in a <p> tag -->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Factorial</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                    $("#btn1").click(
+                        () => {
+                            num = $("input").val();
+                            function factorial(num) {
+                                if(num<=1){
+                                    return 1;
+                                }
+                                return num*factorial(num-1);
+                            }  
+                            result = factorial(num);
+                            $("p").text("Factorial:"+result)
+                            //document.getElementsByTagName("p")[0].innerHTML = "Factorial :" + factorial(num);
+                        }
+                    )
+                }
+            )
+        </script>
+    </head>
+    <body>
+        <input type="text" placeholder="Enter a Number" >
+        <button id="btn1">Submit </button>
+
+        <p></p>
+    </body>
+</html>
